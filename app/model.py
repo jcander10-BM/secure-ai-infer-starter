@@ -45,7 +45,7 @@ def predict(text: str):
     mdl = load_model()
     probs = mdl.predict_proba([text])[0]
     idx = probs.argmax()
-    label = mdl.classes_[idx]
+    label = str(mdl.classes_[idx])
     score = float(probs[idx])
     return label, score
 
