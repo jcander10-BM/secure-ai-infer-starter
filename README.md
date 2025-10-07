@@ -9,7 +9,7 @@ A hands-on cybersecurity portfolio project that demonstrates how to **secure an 
 
 ## Overview
 
-### 🧩 Business Problem & Solution
+### Business Problem & Solution
 
 #### Author & Purpose
 Designed by **JAnderson** as a cybersecurity portfolio project to demonstrate secure MLOps practices. This repository is intended for employers, recruiters, and engineers who want to understand how to secure and validate AI inference pipelines in production environments.
