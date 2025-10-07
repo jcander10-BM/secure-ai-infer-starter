@@ -1,4 +1,4 @@
-# 🧠 Secure AI Inference Pipeline
+#  Secure AI Inference Pipeline
 ![CI](https://github.com/jcander10-BM/secure-ai-infer-starter/actions/workflows/ci.yml/badge.svg)
 ![CI](https://github.com/jcander10-BM/secure-ai-infer-starter/actions/workflows/ci.yml/badge.svg)
 ![CI](https://github.com/jcander10-BM/secure-ai-infer-starter/actions/workflows/ci.yml/badge.svg)
@@ -7,7 +7,7 @@ A hands-on cybersecurity portfolio project that demonstrates how to **secure an 
 
 ---
 
-## 🚀 Overview
+## Overview
 
 ### 🧩 Business Problem & Solution
 
