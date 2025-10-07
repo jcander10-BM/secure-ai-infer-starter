@@ -8,6 +8,7 @@ from sklearn.naive_bayes import MultinomialNB
 _MODEL = None
 
 def _build_fallback_model():
+    """Create a small text classifier if no model.pkl is found."""
     texts = [
         "reset your password",
         "please reset password",
@@ -18,15 +19,20 @@ def _build_fallback_model():
         "project update attached",
         "standup meeting notes",
     ]
-    labels = ["phishing","phishing","phishing","phishing","benign","benign","benign","benign"]
+    labels = [
+        "phishing","phishing","phishing","phishing",
+        "benign","benign","benign","benign"
+    ]
     pipe = make_pipeline(CountVectorizer(), MultinomialNB())
     pipe.fit(texts, labels)
     return pipe
 
 def load_model():
+    """Load model.pkl if it exists, else build fallback."""
     global _MODEL
     if _MODEL is not None:
         return _MODEL
+
     model_path = Path(os.getenv("MODEL_PATH", "models/model.pkl"))
     if model_path.exists():
         _MODEL = joblib.load(model_path)
@@ -35,8 +41,8 @@ def load_model():
     return _MODEL
 
 def predict(text: str):
+    """Return (label, score) for given input text."""
     mdl = load_model()
-    # Naive Bayes supports predict_proba
     probs = mdl.predict_proba([text])[0]
     idx = probs.argmax()
     label = mdl.classes_[idx]
